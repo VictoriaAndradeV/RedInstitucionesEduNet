@@ -1,42 +1,74 @@
 package Clases;
-
-import java.util.GregorianCalendar;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Institucion {
-    private GregorianCalendar fechaDeInicio;
-    private String sede;
-    private String idOficial;
+    private Direccion direccion;
+    private int idOficial;
+    private String nombre;
+    private List<String> sedes;
+    private List<Asignacion> asignaciones;
 
     public Institucion() {
+        this.asignaciones = new ArrayList<>();
     }
 
-    public Institucion(GregorianCalendar fechaDeInicio, String sede, String idOficial) {
-        this.fechaDeInicio = fechaDeInicio;
-        this.sede = sede;
+    public Institucion(Direccion direccion, int idOficial, String nombre, List<String> sedes) {
+        this.direccion = direccion;
         this.idOficial = idOficial;
+        this.nombre = nombre;
+        this.sedes = sedes;
+        this.asignaciones = new ArrayList<>();
     }
 
-    public GregorianCalendar getFechaDeInicio() {
-        return fechaDeInicio;
+    public Direccion getDireccion() {
+        return direccion;
     }
 
-    public void setFechaDeInicio(GregorianCalendar fechaDeInicio) {
-        this.fechaDeInicio = fechaDeInicio;
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
     }
 
-    public String getSede() {
-        return sede;
-    }
-
-    public void setSede(String sede) {
-        this.sede = sede;
-    }
-
-    public String getIdOficial() {
+    public int getIdOficial() {
         return idOficial;
     }
 
-    public void setIdOficial(String idOficial) {
+    public void setIdOficial(int idOficial) {
         this.idOficial = idOficial;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public List<String> getSedes() {
+        return sedes;
+    }
+
+    public void setSedes(List<String> sedes) {
+        this.sedes = sedes;
+    }
+
+    public void addAsignacion(Asignacion asignacion){
+        this.asignaciones.add(asignacion);
+    }
+
+    public List<Asignacion> getAsignaciones() {
+        return asignaciones;
+    }
+
+    @Override
+    public String toString() {
+        return "Institucion{" +
+                "direccion=" + direccion +
+                ", idOficial=" + idOficial +
+                ", nombre='" + nombre + '\'' +
+                ", sedes=" + sedes +
+                ", asignaciones=" + asignaciones +
+                '}';
     }
 }
