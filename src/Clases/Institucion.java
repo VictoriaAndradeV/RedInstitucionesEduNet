@@ -7,6 +7,9 @@ public class Institucion {
     private String sede;
     private String idOficial;
 
+    public Institucion() {
+    }
+
     public Institucion(GregorianCalendar fechaDeInicio, String sede, String idOficial) {
         this.fechaDeInicio = fechaDeInicio;
         this.sede = sede;

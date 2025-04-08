@@ -1,4 +1,6 @@
 package Clases;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Persona {
     private String cedula;
@@ -6,14 +8,20 @@ public class Persona {
     private String apellido;
     private String telefono;
     private String correoElectronico;
+    private List<Direccion> direcciones;
 
+    public Persona() {
+        this.direcciones = new ArrayList<>();
+    }
 
+    //no ponemos entre parentesis la lista, no queremos pasar la lista de direcciones, es porque tenemos una relacion de agregacion
     public Persona(String cedula, String nombre, String apellido, String telefono, String correoElectronico) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.correoElectronico = correoElectronico;
+        this.direcciones = new ArrayList<>();
     }
 
     public String getCedula() {
@@ -54,5 +62,25 @@ public class Persona {
 
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
+    }
+    //ir agregando la direccion una por una a la lista de direcciones
+    public void addDireccion(Direccion direccion){ //parametro un objeto de tipo direccion
+        this.direcciones.add(direccion);
+    }
+
+    public List<Direccion> getDirecciones() {
+        return direcciones;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "cedula='" + cedula + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", correoElectronico='" + correoElectronico + '\'' +
+                ", direcciones=" + direcciones + //Siempre las clases deben tener el toString para que se puedan imprimir las direcciones
+                '}';
     }
 }

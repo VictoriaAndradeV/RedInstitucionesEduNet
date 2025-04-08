@@ -1,6 +1,9 @@
 package Clases;
 
+import enums.TipoDireccion;
+
 public class Direccion {
+    private TipoDireccion tipoDireccion;
     private String callePrincipal;
     private String calleSecundaria;
     private String numeracion;
@@ -8,7 +11,10 @@ public class Direccion {
     private String provincia;
     private String ciudad;
 
-    public Direccion(String callePrincipal, String calleSecundaria, String numeracion, String pais, String provincia, String ciudad) {
+    public Direccion() {}
+
+    public Direccion(TipoDireccion tipoDireccion, String callePrincipal, String calleSecundaria, String numeracion, String pais, String provincia, String ciudad) {
+        this.tipoDireccion = tipoDireccion;
         this.callePrincipal = callePrincipal;
         this.calleSecundaria = calleSecundaria;
         this.numeracion = numeracion;
@@ -63,5 +69,26 @@ public class Direccion {
 
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
+    }
+
+    public TipoDireccion getTipoDireccion() {
+        return tipoDireccion;
+    }
+
+    public void setTipoDireccion(TipoDireccion tipoDireccion) {
+        this.tipoDireccion = tipoDireccion;
+    }
+
+    @Override
+    public String toString() {
+        return "Direccion{" +
+                "tipoDireccion=" + tipoDireccion +
+                ", callePrincipal='" + callePrincipal + '\'' +
+                ", calleSecundaria='" + calleSecundaria + '\'' +
+                ", numeracion='" + numeracion + '\'' +
+                ", pais='" + pais + '\'' +
+                ", provincia='" + provincia + '\'' +
+                ", ciudad='" + ciudad + '\'' +
+                '}';
     }
 }
