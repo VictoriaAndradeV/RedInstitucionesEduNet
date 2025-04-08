@@ -8,11 +8,11 @@ public class Asignacion {
     private Persona persona;
     private Rol rol;
 
-    public Asignacion() {
+    public Asignacion() { //constructor vacio
 
     }
 
-    public Asignacion(GregorianCalendar fechaInicio, Persona persona, Rol rol) {
+    public Asignacion(GregorianCalendar fechaInicio, Persona persona, Rol rol) { //constructor con todos los atributos
         this.fechaInicio = fechaInicio;
         this.persona = persona;
         this.rol = rol;
@@ -34,7 +34,7 @@ public class Asignacion {
         this.persona = persona;
     }
 
-    public Rol getRol() {
+    public Rol getRol() { //getter para enum ROL
         return rol;
     }
 

@@ -1,5 +1,4 @@
 package Clases;
-
 import enums.TipoDireccion;
 
 public class Direccion {
